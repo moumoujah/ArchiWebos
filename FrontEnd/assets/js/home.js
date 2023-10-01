@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headerLogin()
         editWorks()
         deleteFilter()
+        Modal()
     }
 });
 
@@ -111,6 +112,7 @@ function logout() {
 function editWorks(){
 const title = document.querySelector("#portfolio h2")
 modifier = document.createElement("a");
+modifier.id = "openModal"
 modifier.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>Modifier`
 title.appendChild(modifier)
 }
@@ -122,6 +124,3 @@ function deleteFilter() {
 
     parentElement.removeChild(ulElement); 
 }
-
-
-

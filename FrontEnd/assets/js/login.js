@@ -49,6 +49,6 @@ async function connexion() {
         }
     } catch (error) {
 
-        console.error('Erreur réseau', error);
+        console.error('Erreur', error);
     }
 }
