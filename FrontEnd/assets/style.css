@@ -323,7 +323,7 @@ i {
 	margin: 10% auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 48%;
+	width: 630px;
 	position: relative;
 	border-radius: 10px;
 }
@@ -337,9 +337,9 @@ i {
 
 .modal-body {
 	border-bottom: 1px solid #B3B3B3;
-	width: 75%;
+	width: 470px;
 	padding-bottom: 47px;
-	padding-left: 15px;
+	
 }
 
 
@@ -371,7 +371,7 @@ i {
 .gallery-modal li {
 	display: inline-block;
 	width: 17%;
-	margin: 0 4px;
+	margin: 0 7px;
 }
 
 .gallery-modal img {

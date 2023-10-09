@@ -107,6 +107,7 @@ function changeModal() { //fonction pour changer l'apparence de la modal (suppri
         document.getElementById('addPict').style.display = "block"
         document.querySelector('.modal a').style.display = "block"
         document.querySelector(".gallery-modal").style.display = "block"
+        storage();
     })
 }
 
@@ -227,6 +228,7 @@ function buttonValidate() {//fonction qui permet de de rendre visible la photo d
             document.querySelector('#pictures div i').style.display = "none"
             document.querySelector('#pictures div label').style.display = "none"
             document.querySelector('#pictures div p').style.display = "none"
+            
 
         } else {
             alert("L'image doit avoir taille inférieure à 4 Mo.");
@@ -256,9 +258,11 @@ function addPicture() { //fonction pour récupérer et enregistrer les nouveaux 
         tableauDonnees.push(formData);
         ModalWorks(editWorks)
         genererWorks(editWorks) 
-        trash();
+        trash()
+        storage()
         document.querySelector('.img-add').style.display = "none"
         document.getElementById('titre').value = '';
+        document.getElementById('categorie').value = '1';
         document.querySelector('#pictures div i').style.display = "block"
         document.querySelector('#pictures div label').style.display = "flex"
         document.querySelector('#pictures div p').style.display = "block"
@@ -270,7 +274,7 @@ function addPicture() { //fonction pour récupérer et enregistrer les nouveaux 
         document.querySelector('.modal a').style.display = "block"
         document.querySelector(".gallery-modal").style.display = "block"
         
-           
+        
         updateButtonSubmit()
         newpicture()
         
