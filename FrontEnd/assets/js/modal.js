@@ -238,7 +238,7 @@ function buttonValidate() {//fonction qui permet de de rendre visible la photo d
 }
 
 
-function addPicture() { 
+function addPicture() { //fonction pour récupérer et enregistrer les nouveaux projets rensseigner
     const validate = document.getElementById('validate')
     const pictures = document.getElementById('pictures')
     const photoInput = document.getElementById("photo");
@@ -279,7 +279,7 @@ function addPicture() {
 
 
 
-async function newpicture() {
+async function newpicture() {//fonction pour envoyer les nouveaux projets 
     try {
         for (const formData of tableauDonnees) {
             const response = await fetch(APIWORK, {
