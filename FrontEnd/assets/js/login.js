@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const errorMessage = document.querySelector('.error-message');
+        const errorMessage = document.getElementById('error-message');
+        
         if (errorMessage) {
             errorMessage.parentNode.removeChild(errorMessage);
         }
@@ -40,6 +41,7 @@ async function connexion() {
         } else if (response.status === 404 || response.status === 401) {
            const passwordInput = document.getElementById('password');
            const errorConnexion = document.createElement('div');
+           errorConnexion.id = "error-message";
            errorConnexion.textContent = "Email ou mot de passe incorrect";
            
            passwordInput.parentNode.insertBefore(errorConnexion, passwordInput.nextSibling);
