@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => { //attendre que toutes la p
     });
 });
 
-
 async function connexion() {//fonction pour récupérer la valeur des champs rensseigner email et mot de passe
     const emailValue = document.getElementById('email').value;
     const passwordValue = document.getElementById('password').value;
@@ -35,7 +34,6 @@ async function connexion() {//fonction pour récupérer la valeur des champs ren
             const token = data.token; 
             localStorage.setItem('token', token)
             localStorage.setItem('isLoggedIn', true);
-
             window.location.href = "index.html";
 
         } else if (response.status === 404 || response.status === 401) {

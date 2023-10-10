@@ -22,7 +22,7 @@ function storage() {
         worksLocal = localStorage.getItem('works');
         works = JSON.parse(worksLocal);
         genererWorks(works)
-        updateLocalStorage();
+        updateLocalStorage()
     } else {
         updateLocalStorage();//sinon met le à jour
     }
@@ -115,7 +115,6 @@ function loginStorage() {
 
 function loginView() {//changement de l'apparence de la page (header,button des filtresetc...) quand l'utilisateur est connecté
     const newHeader = document.createElement("div");
-
     newHeader.className = "login-header";
     newHeader.innerHTML = `<a><i class="fa-regular fa-pen-to-square"></i>Mode edition<a>`
     const bodyElement = document.querySelector("body");

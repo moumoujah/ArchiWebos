@@ -7,10 +7,6 @@ function Modal() {
     buttonValidate()
     addPicture()
     storage()
-   
-   
-    
-    
 }
 
 function createModal() {//fonction qui permet de créer la modal
@@ -81,7 +77,6 @@ function openAndClose() { //fonction pour ouvrir et fermer la modal
         }
     });
    
-    
 }
 
 function changeModal() { //fonction pour changer l'apparence de la modal (supprimer projet et ajouter un projet)
@@ -111,7 +106,6 @@ function changeModal() { //fonction pour changer l'apparence de la modal (suppri
     })
 }
 
-
 function ModalWorks(works) {//fonction qui permet d'afficher les projet dans la modal
     const divGallery = document.querySelector(".gallery-modal")
     divGallery.innerHTML = ""
@@ -129,7 +123,6 @@ function ModalWorks(works) {//fonction qui permet d'afficher les projet dans la 
         workElement.appendChild(trashElement)
     }
 }
- 
 
 function trash() {//fonction pour supprimer des projet dans la modal assoccier a la fonction removeElement
     let trashIcons = document.querySelectorAll(".fa-trash-can");
@@ -138,6 +131,7 @@ function trash() {//fonction pour supprimer des projet dans la modal assoccier a
             removeElement(index);
             updatetrash();
             storage()
+            
             
             
         });
@@ -171,10 +165,8 @@ function removeElement(index) {//fonction qui permet de supprimer les projets et
         }
     ModalWorks(editWorks);
     genererWorks(editWorks);
-    
-    
-    
 }
+
 function updatetrash() {
     let trashIcons = document.querySelectorAll(".fa-trash-can");
     trashIcons.forEach(icon => {
@@ -182,7 +174,6 @@ function updatetrash() {
     });
     trash();
 }
-
 
 
 const tableauDonnees = [];//tableau pour les nouveau projet
@@ -256,10 +247,8 @@ function addPicture() { //fonction pour récupérer et enregistrer les nouveaux 
         const imageArray = { "imageUrl": imageUrl, "title": titreInput.value }
         editWorks.push(imageArray)
         tableauDonnees.push(formData);
-        ModalWorks(editWorks)
-        genererWorks(editWorks) 
-        trash()
-        storage()
+        
+        
         document.querySelector('.img-add').style.display = "none"
         document.getElementById('titre').value = '';
         document.getElementById('categorie').value = '1';
@@ -273,15 +262,13 @@ function addPicture() { //fonction pour récupérer et enregistrer les nouveaux 
         document.getElementById('addPict').style.display = "block"
         document.querySelector('.modal a').style.display = "block"
         document.querySelector(".gallery-modal").style.display = "block"
-        
-        
+        ModalWorks(editWorks)
+        genererWorks(editWorks) 
+        trash()
         updateButtonSubmit()
         newpicture()
-        
     });
 }
-
-
 
 async function newpicture() {//fonction pour envoyer les nouveaux projets 
     try {
@@ -301,4 +288,5 @@ async function newpicture() {//fonction pour envoyer les nouveaux projets
     } catch (error) {
         console.error("Erreur:", error);
     }
+    updateLocalStorage()
 }
