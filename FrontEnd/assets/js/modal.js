@@ -39,10 +39,10 @@ function createModal() {//fonction qui permet de créer la modal
                 <input type="text" id="titre" name="titre" required>
                 <label for="categorie">Catégorie</label>
                 <select id="categorie" name="categorie">
-                <option value="1"></option>
-                    <option value="2">Objets</option>
-                    <option value="3">Appartements</option>
-                    <option value="4">Hôtels & restaurants</option>
+                <option class="value0" value="0"></option>
+                    <option value="1">Objets</option>
+                    <option value="2">Appartements</option>
+                    <option value="3">Hotels & restaurants</option>
                 </select> 
             </form>
         </div>
@@ -186,7 +186,7 @@ function updateButtonSubmit() {//fonction pour mettre le boutton de validation e
     const categorieInput = document.getElementById("categorie");
     const validate = document.getElementById('validate')
 
-    if (photoInput.value.trim() !== '' && titreInput.value.trim() !== '' && categorieInput.value.trim() !== '1') {
+    if (photoInput.value.trim() !== '' && titreInput.value.trim() !== '' && categorieInput.value.trim() !== '0') {
         validate.disabled = false;
         validate.style.backgroundColor = "#1D6154"
     } else {
