@@ -66,13 +66,37 @@ function openAndClose() { //fonction pour ouvrir et fermer la modal
     });
     closeModal.addEventListener('click', () => {
         modal.style.display = 'none';
+        document.querySelector('.img-add').style.display = "none"
         document.getElementById('titre').value = '';
+        document.getElementById('categorie').value = '0';
+        document.querySelector('#pictures div i').style.display = "block"
+        document.querySelector('#pictures div label').style.display = "flex"
+        document.querySelector('#pictures div p').style.display = "block"
+        document.querySelector('.after').style.display = "none"
+        document.getElementById('pictures').style.display = "none"
+        document.getElementById('validate').style.display = "none"
+        document.querySelector('.modal h2').innerText = "Galerie Photo"
+        document.getElementById('addPict').style.display = "block"
+        document.querySelector('.modal a').style.display = "block"
+        document.querySelector(".gallery-modal").style.display = "block"
         storage()
     });
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
-            document.getElementById('titre').value = '';
             modal.style.display = 'none';
+            document.querySelector('.img-add').style.display = "none"
+        document.getElementById('titre').value = '';
+        document.getElementById('categorie').value = '0';
+        document.querySelector('#pictures div i').style.display = "block"
+        document.querySelector('#pictures div label').style.display = "flex"
+        document.querySelector('#pictures div p').style.display = "block"
+        document.querySelector('.after').style.display = "none"
+        document.getElementById('pictures').style.display = "none"
+        document.getElementById('validate').style.display = "none"
+        document.querySelector('.modal h2').innerText = "Galerie Photo"
+        document.getElementById('addPict').style.display = "block"
+        document.querySelector('.modal a').style.display = "block"
+        document.querySelector(".gallery-modal").style.display = "block"
             storage()
         }
     });
@@ -251,7 +275,7 @@ function addPicture() { //fonction pour récupérer et enregistrer les nouveaux 
         
         document.querySelector('.img-add').style.display = "none"
         document.getElementById('titre').value = '';
-        document.getElementById('categorie').value = '1';
+        document.getElementById('categorie').value = '0';
         document.querySelector('#pictures div i').style.display = "block"
         document.querySelector('#pictures div label').style.display = "flex"
         document.querySelector('#pictures div p').style.display = "block"
